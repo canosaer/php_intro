@@ -1,14 +1,15 @@
 /* 
 ==============================================
-CONTENT:	Project Name Here
+CONTENT:	Q5 Panel Site
 AUTHOR:		Eric Canosa
 ==============================================
 
 TABLE OF CONTENTS:
 
 0. Initialization
-1. Appearance
-2. Utility
+1. Partials
+2. General
+3. Utility
 
 ==============================================
 */
@@ -18,11 +19,60 @@ TABLE OF CONTENTS:
 @use 'variables';
 @use 'mixins';
 
-/* 1. Appearance ============================= */
+/* 1. Partials =============================== */
+@use 'header';
+@use 'overview';
+@use 'projects';
+@use 'footer';
+
+/* 2. General =============================== */
 
 *, *::before, *::after {
 	box-sizing: border-box;
 }
 
+body{
+	background: whitesmoke;
+	font-family:'Lucida Sans', sans-serif;
+}
 
-/* 2. Utility ================================ */
+a{
+	text-decoration: none;
+}
+
+.display-grid{
+	@include mixins.default-grid;
+}
+
+/* 3. Utility ================================ */
+
+.hidden{
+	display: none;
+}
+
+.invisible{
+	visibility: hidden;
+}
+
+.transparent{
+	opacity: 0;
+}
+
+.dimmer{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.5;
+	left: 0;
+	top: 0;
+}
+
+.send-to-rear{
+	z-index: -99;
+}
+
+.bring-to-front{
+	z-index: 99;
+}

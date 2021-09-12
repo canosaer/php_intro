@@ -17,8 +17,8 @@
 	<body>
 
 		<main class="home-page display-grid">
-			<header class="top-row">
-				<a class="top-row__link" href="#"><h1 class="top-row__heading">Eric Canosa </h1></a>
+			<header class="header">
+				<a class="header__link" href="#"><h1 class="header__heading">Eric Canosa </h1></a>
 				<input type="checkbox" class="toggle__checkbox" name="toggle" id="toggle" aria-label="nav-menu-toggle" role="button">
 				<label for="toggle" class="toggle">
 					<div class="toggle__line toggle__line_1"></div>
@@ -34,107 +34,48 @@
 				</nav>
 			</header>
 
-			<section class="hero">
-				<h2 class="hero__heading">Interactive Development and Creative Technology</h2>
-				<p class="hero__text">I develop websites and apps for clients who want fast, quality work. Take a look through my projects and I'd love to hear from you!</p>
-			</section> 
-
-			<section class="projects">
-				<a href="#" class="projects__card projects__card_web">
-					<img class="projects__card-image projects__card-image_web" src="dist/img/web_design.jpg" loading="lazy" alt="web design">
-					<div class="projects__text">
-						<h3 class="projects__heading" aria-hidden="true">Web Design</h3>
-						<p class="projects__link">View Projects</p>
-					</div>
-				</a>
-				<a href="#" class="projects__card projects__card_app">
-					<img class="projects__card-image" src="dist/img/app_design.jpg" loading="lazy" alt="app design">
-					<div class="projects__text">
-						<h3 class="projects__heading" aria-hidden="true">App Design</h3>
-						<p class="projects__link">View Projects</p>
-					</div>	
-				</a>
-				<a href="#" class="projects__card projects__card_graphic">
-					<img class="projects__card-image" src="dist/img/graphic_design.jpg" loading="lazy" alt="graphic design	">
-					<div class="projects__text">
-						<h3 class="projects__heading" aria-hidden="true">Graphic Design</h3>
-						<p class="projects__link">View Projects</p>	
-					</div>
-				</a>
+			<section class="intro">
+				<h2 class="intro__heading">Interactive Development and Creative Technology</h2>
+				<p class="intro__text">I develop websites and apps for clients who want fast, quality work. Take a look through my projects - I'd love to hear from you!</p>
 			</section>
 
-			<ul class="overview">
-				<li class="overview__item">
-					<figure class="overview__image-slot">
-						<img class="overview__image" tabindex="0" src="dist/img/facilitation.png" loading="lazy" alt="two people at a laptop">
-					</figure>
-					<h3 class="overview__heading" tabindex="0">Facilitation</h3>
-					<p class="overview__text" tabindex="0">Our alignment development lifecycle enables holistic, value-added standpoints. So we can hit the ground running, we will be dynamically investing every synergy in our space.</p>
-				</li>
-				<li class="overview__item">
-					<figure class="overview__image-slot overview__image-slot_reinvention">
-						<img class="overview__image" tabindex="0" src="dist/img/reinvention.png" loading="lazy" alt="a woman on a chair thinking">
-					</figure>
-					<h3 class="overview__heading" tabindex="0">Reinvention</h3>
-					<p class="overview__text" tabindex="0">Efficiencies will come from effectively deep-diving our paradigm shifts. Efficiencies will come from proactively leveraging our big data.
-						Knowledge transfer market foci.</p>
-				</li>
-				<li class="overview__item">
-					<figure class="overview__image-slot overview__image-slot_handshake">
-						<img class="overview__image" tabindex="0" src="dist/img/handshake.png" loading="lazy" alt="little cartoon people around a cartoon planet">
-					</figure>
-					<h3 class="overview__heading" tabindex="0">Handshakefulness</h3>
-					<p class="overview__text" tabindex="0">We aim to virtually synergise our team player by reliably relaying our end-to-end actionable clouds. You need to ethically virtualise your executive searches to increase your proposition velocity.</p>
-				</li>
-			</ul>
+			<section class="projects">
+				<h3 class="projects__heading" >English <span class="programs__bold-text">Faculty</span></h3>
+				<div class="projects__card-display">
+					<a class="projects__card" href="#">
+						<img class="projects__image" aria-hidden="true" src="dist/img/julie.jpg" loading="lazy" alt="Julie Barefoot">
+						<div class="projects__text">
+							<h4 class="projects__subheading">Julie Barefoot</h4>
+							<p class="projects__caption">Goodrich C. White Professor of English</p>
+						</div>
+					</a>
+					<a class="projects__card" href="/english-dept/anandhi-bharadwaj.html">
+						<img class="projects__image" aria-hidden="true" src="dist/img/anandhi.jpg" loading="lazy" alt="Anandhi Bharadwaj">
+						<div class="projects__text">
+							<h4 class="projects__subheading">Anandhi Bharadwaj</h4>
+							<p class="projects__caption">Professor of English</p>
+						</div>
+					</a>
+					<a class="projects__card" href="#">
+						<img class="projects__image" aria-hidden="true" src="dist/img/robin.jpg" loading="lazy" alt="Robin Dittman">
+						<div class="projects__text">
+							<h4 class="projects__subheading">Robin Dittman</h4>
+							<p class="projects__caption">Associate Professor</p>
+						</div>
+					</a>
+					<a class="projects__card" href="#">
+						<img class="projects__image" aria-hidden="true" src="dist/img/ed.jpg" loading="lazy" alt="Ed Leonard">
+						<div class="projects__text">
+							<h4 class="projects__subheading">Ed Leonard</h4>
+							<p class="projects__caption">Professor of English and the Liberal Arts</p>
+						</div>
+					</a>
+				</div>
+			</section>
 
 			<footer class="footer">
-				<section class="contact">
-					<h3 class="contact__heading" tabindex="0">Let's collaborate on immersive innovations</h3>
-					<p class="contact__text" tabindex="0">You need to dynamically connect your low hanging fruit to increase your driver velocity.</p>
-					<button class="contact__button">Get In Touch</button>
-				</section>
-
-				<section class="outro">
-					<a class="outro__link" href="#"><img class="outro__logo" src="dist/img/gray_tent.png" alt="logo"><h1 class="outro__heading">Big Top</h1></a>
-					<nav class="footer-nav">
-						<ul class="footer-nav__list">
-							<li class="footer-nav__item"><a class="footer-nav__link" href="/about.html">About Us</a></li>
-							<li class="footer-nav__item"><a class="footer-nav__link" href="#">Services</a></li>
-							<li class="footer-nav__item"><a class="footer-nav__link" href="#">Contact</a></li>
-						</ul>
-					</nav>
-					<div class="outro__contact-card outro__contact-card_1" tabindex="0">
-						<h4 class="outro__sub-heading">Big Top Central Office</h4>
-						<p class="outro__text">812 Lambert Drive</p>
-						<p class="outro__text">Atlanta, Georgia 30324</p>
-					</div>
-
-					<div class="outro__contact-card outro__contact-card_2" tabindex="0">
-						<h4 class="outro__sub-heading">Contact Us (Central Office)</h4>
-						<p class="outro__text">P : +1 404-477-6700</p>
-						<p class="outro__text">M : contact@example.com</p>
-					</div>
-
-					<ul class="social-media">
-						<li class="social-media__item">
-							<a class="social-media__link" href="#" target="_blank"><i class="social-media__icon fab fa-facebook-square"></i></a>
-						</li>
-						<li class="social-media__item">
-							<a class="social-media__link" href="#" target="_blank"><figure class="social-media__youtube-circle"><i class="social-media__icon fab fa-youtube"></i></figure></a>
-						</li>
-						<li class="social-media__item">
-							<a class="social-media__link" href="#" target="_blank"><i class="social-media__icon fab fa-twitter"></i></a>
-						</li>
-						<li class="social-media__item">
-							<a class="social-media__link" href="#" target="_blank"><i class="social-media__icon fab fa-pinterest"></i></a>
-						</li>
-						<li class="social-media__item">
-							<a class="social-media__link" href="#" target="_blank"><figure class="social-media__insta-box"><i class="social-media__icon fab fa-instagram"></i></figure></a>
-						</li>
-					</ul>
-					
-				</section>
+				<a class="footer__link" href="#">FAQ</a>
+				<p class="footer__text">&copy;2021 Eric Canosa</p>
 			</footer>
 
 		</main>

@@ -83,12 +83,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -103,132 +103,364 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-columns: minmax(0, 1fr) minmax(0, 0.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.1fr);
+  position: relative;
+  padding: 2.35rem 7.1% 1.25rem;
+}
+@media (min-width: 1024px) {
+  .header {
+    -ms-grid-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+  }
+}
+.header__link {
+  color: black;
+}
+.header__heading {
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: right;
+  place-self: center right;
+}
+@media (min-width: 1024px) {
+  .toggle {
+    display: none;
+  }
+}
+.toggle__line {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  transition: all 200ms ease-in-out;
+}
+.toggle__line_1 {
+  margin: auto;
+}
+.toggle__line_2 {
+  margin: auto;
+}
+.toggle__line_open-1 {
+  background: rgba(242, 169, 0, 0.7);
+  position: absolute;
+  top: 0.75rem;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.toggle__line_open-2 {
+  background: rgba(242, 169, 0, 0.7);
+  position: absolute;
+  top: 0.75rem;
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.toggle__checkbox {
+  opacity: 0;
+  position: absolute;
+  cursor: none;
+  right: 3.4rem;
+  top: 2.7rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+@media (min-width: 1024px) {
+  .toggle__checkbox {
+    display: none;
+  }
+}
+
+.menu {
+  position: absolute;
+  visibility: hidden;
+  width: 0rem;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  padding: 4rem 0 0 3.7rem;
+  transition: width 200ms ease-in-out;
+  z-index: 3;
+  overflow-x: hidden;
+}
+@media (min-width: 1024px) {
+  .menu {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-rows: auto;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    position: unset;
+    width: unset;
+    opacity: unset;
+    right: unset;
+    top: unset;
+    height: unset;
+    padding: unset;
+    transition: unset;
+    visibility: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .menu__list {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    max-width: 50rem;
+    margin-left: auto;
+  }
+}
+.menu__link {
+  color: black;
+  text-transform: uppercase;
+}
+.menu__link:hover {
+  color: steelblue;
+}
+.menu_open {
+  background: white;
+  width: 20.6rem;
+  opacity: 1;
+  visibility: unset;
+}
+.menu__item_open {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.overview {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  padding: 0 2rem;
+  margin: 5rem 0;
+  max-width: 80rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+.overview__heading {
+  color: #012169;
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+.overview__text {
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.5;
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .overview__text {
+    font-size: 1.35rem;
+  }
+}
+.overview__link {
+  font-weight: bold;
+}
+
+.projects {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .projects {
+    -ms-grid-columns: 1fr minmax(0, 80rem) 1fr;
+    grid-template-columns: 1fr minmax(0, 80rem) 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .projects__heading {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+}
+@media (min-width: 768px) {
+  .projects__bold-text {
+    display: unset;
+  }
+}
+.projects__card-display {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
+}
+@media (min-width: 1024px) {
+  .projects__card-display {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+}
+.projects__card {
+  height: 0;
+  position: relative;
+  padding-bottom: 100%;
+}
+.projects__card:hover .projects__text {
+  height: 50%;
+}
+.projects__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.footer {
+  margin-top: 3.5rem;
+  border-top: 1px solid lightgray;
+  padding: 4%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+.footer__text {
+  color: #909097;
+}
+.footer__link {
+  color: #4d6dd1;
 }
 
 /* 
 ==============================================
-CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
+CONTENT:	Q5 Panel Site
+AUTHOR:		Eric Canosa
 ==============================================
 
 TABLE OF CONTENTS:
 
-0. Reset
-1. Main Layout
-2. Content
+0. Initialization
+1. Partials
+2. General
+3. Utility
 
 ==============================================
 */
-/* 0. Reset ================================= */
-/* 
-If you want to add partials, use Sass Modules via @use:
-@use 'variables';
-
-Usage: partial-name.variable/mixin/function-name:
-background: variables.$primary-color;
-*/
-/* 1. Main Layout ================================= */
-* {
-	box-sizing: border-box;
+/* 0. Initialization ========================= */
+/* 1. Partials =============================== */
+/* 2. General =============================== */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-	background: #2e3032;
+  background: whitesmoke;
+  font-family: "Lucida Sans", sans-serif;
 }
 
-/* 2. Content ================================= */
-.floating-box {
-	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
+a {
+  text-decoration: none;
 }
-.floating-box .foreground {
-	position: relative;
-	z-index: 2;
-	transform: translateZ(100px);
+
+.display-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
 }
-.floating-box .background {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: white;
-	z-index: 1;
-	transition: 0.2s;
-	transform: translateX(20px) perspective(600px) rotateY(15deg);
+
+/* 3. Utility ================================ */
+.hidden {
+  display: none;
 }
-.floating-box:hover .background {
-	transform: translateX(-30px) perspective(600px) rotateY(-15deg);
+
+.invisible {
+  visibility: hidden;
 }
-.floating-box .logo {
-	position: absolute;
-	top: -30px;
-	width: 60px;
-	z-index: 2;
-	transform: translateZ(100px);
-	transition: 0.3s;
+
+.transparent {
+  opacity: 0;
 }
-.floating-box .logo:hover {
-	-ms-transform: rotate(-0.4turn);
-	    transform: rotate(-0.4turn);
+
+.dimmer {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
 }
-.floating-box h1 {
-	font-weight: 700;
-	font-size: 22pt;
-	margin: 15px 0;
+
+.send-to-rear {
+  z-index: -99;
 }
-.floating-box p {
-	color: #777;
-	line-height: 140%;
-}
-.floating-box p.github {
-	font-size: 0.8em;
-}
-.floating-box p.github a {
-	opacity: 0.2;
-	transition: 0.3s;
-}
-.floating-box p.github a:hover {
-	opacity: 1;
-	color: red;
-}
-.floating-box code {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 0.8em;
-	opacity: 0.2;
+
+.bring-to-front {
+  z-index: 99;
 }
 /*# sourceMappingURL=main.css.map */
