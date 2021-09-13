@@ -104,15 +104,16 @@
 	}
 
 	&__link{
-		background-color: #3acec2;
+		background-color: var(--light-blue);
 		padding: 10px;
 		color:white;
 		font-weight:bold;
 		border-radius: 999rem;
+		transition: all 200ms ease-in-out;
 
 		&:hover{
-			color: #3acec2;
-			background-color:white;
+			color: var(--light-blue);
+			background-color: white;
 		}
 	}
 

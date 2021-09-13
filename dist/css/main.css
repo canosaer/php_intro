@@ -274,6 +274,7 @@ table {
   color: var(--light-blue);
   font-weight: bold;
   text-transform: uppercase;
+  transition: color 200ms ease-in-out;
 }
 .menu__link:hover {
   color: var(--dark-blue);
@@ -451,14 +452,15 @@ table {
   justify-content: space-evenly;
 }
 .projects__link {
-  background-color: #3acec2;
+  background-color: var(--light-blue);
   padding: 10px;
   color: white;
   font-weight: bold;
   border-radius: 999rem;
+  transition: all 200ms ease-in-out;
 }
 .projects__link:hover {
-  color: #3acec2;
+  color: var(--light-blue);
   background-color: white;
 }
 .projects__subheading {
