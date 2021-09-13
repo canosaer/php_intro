@@ -3,18 +3,52 @@
 
 .projects{
 	@include mixins.default-grid;
-	// @include mixins.generic-display-section;
+	margin-bottom: 5rem;
+	overflow: hidden;
+	padding: 1.4rem 0 2.85rem;
 
 	@include mixins.medium-screen{
 		grid-template-columns: 1fr minmax(0,80rem) 1fr;
 	}
 
 	&__heading{
-		// @include mixins.heading-format;
-		// @include mixins.section-heading-format;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 1.1;
+		color: white;
+		width: 94%;
+		justify-self: center;
+		position: relative;
+		padding: 1.5rem;
+		font-size: 1.85rem;
+		margin-bottom: 1rem;
+
+		&:before{
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: var(--dark-blue);
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			right: -1rem;
+			top: -1rem;
+			background: var(--light-blue);
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+		}
 
 		@include mixins.landscape{
-			// @include mixins.generic-landscape-heading;
+			font-size: 2.75rem;
+			text-align: right;
+			padding-right: 5rem;
 		}
 
 		@include mixins.medium-screen{
@@ -23,17 +57,12 @@
 		
 	}
 
-	&__bold-text{
-		// @include mixins.default-bold-text;
-
-		@include mixins.landscape{
-			display: unset;
-		}
-	}
-
 	&__card-display{
 		@include mixins.default-grid;
-		// @include mixins.generic-card-display;
+		padding: 2rem 3%;
+		grid-column-gap: 3%;
+		grid-row-gap: 7rem;
+		justify-content: center;
 		grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
 
 		@include mixins.medium-screen{
@@ -44,34 +73,67 @@
 	&__card{
 		@include mixins.image-slot;
 		padding-bottom: 100%;
+		background: #edf4f7;
 
-		&:hover .projects__text{
-			height: 50%;
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: -1.25rem;
+			border-bottom: dashed 3px var(--dark-blue);
+			width: 100%;
+			cursor: default;
 		}
 
-		// &:before{
-		// 	@include mixins.generic-dotted-line;
-		// }
-
-		// &:after{
-		// 	@include mixins.generic-blue-bar;
-		// }
+		&:after{
+			content: "";
+			position: absolute;
+			bottom: -4.25rem;
+			width: 100%;
+			height: 2.15rem;
+			background: var(--dark-blue);
+			cursor: default;
+		}
 	}
 
-	&__image{
-		@include mixins.cover-parent;
-		@include mixins.default-img;
+	&__link-row{
+		position: absolute;
+		bottom: 1rem;
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
 	}
 
-	// &__text{
-	// 	@include mixins.generic-text;
-	// }
+	&__link{
+		background-color: #3acec2;
+		padding: 10px;
+		color:white;
+		font-weight:bold;
+		border-radius: 999rem;
 
-	// &__subheading{
-	// 	@include mixins.generic-subheading;
-	// }
+		&:hover{
+			color: #3acec2;
+			background-color:white;
+		}
+	}
 
-	// &__caption{
-	// 	@include mixins.generic-caption;
-	// }
+	&__subheading{
+		display: block;
+		font-weight: bold;
+		font-size: 1.8rem;
+		line-height: 1.1;
+		text-align: center;
+		margin-top: 1rem;
+		color: var(--dark-blue);
+
+		@include mixins.wide-screen{
+			margin-top: 1.5rem;
+		}
+	}
+
+	&__caption{
+		margin-top: 1rem;
+		font-size: 1.1rem;
+		padding: 0 1.5rem;
+		line-height: 1.5;
+	}
 }

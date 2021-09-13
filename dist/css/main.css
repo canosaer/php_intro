@@ -133,6 +133,11 @@ table {
   border-spacing: 0;
 }
 
+:root {
+  --light-blue: #3acec2;
+  --dark-blue: #093a58;
+}
+
 .header {
   display: -ms-grid;
   display: grid;
@@ -146,18 +151,16 @@ table {
 }
 @media (min-width: 1024px) {
   .header {
-    -ms-grid-columns: minmax(0, 0.5fr) minmax(0, 1fr);
-    grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+    -ms-grid-columns: minmax(0, 0.35fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 0.35fr) minmax(0, 1fr);
   }
 }
 .header__link {
-  color: black;
+  color: var(--dark-blue);
 }
 .header__heading {
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  letter-spacing: 0.3rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .toggle {
@@ -259,7 +262,7 @@ table {
 @media (min-width: 1024px) {
   .menu__list {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     overflow: hidden;
     width: 100%;
@@ -268,11 +271,12 @@ table {
   }
 }
 .menu__link {
-  color: black;
+  color: var(--light-blue);
+  font-weight: bold;
   text-transform: uppercase;
 }
 .menu__link:hover {
-  color: steelblue;
+  color: var(--dark-blue);
 }
 .menu_open {
   background: white;
@@ -285,36 +289,52 @@ table {
   text-align: left;
 }
 
-.overview {
+.hero {
   display: -ms-grid;
   display: grid;
   grid-auto-rows: auto;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   padding: 0 2rem;
-  margin: 5rem 0;
-  max-width: 80rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  margin: 1rem 0 4rem;
+  background: var(--light-blue);
+  color: white;
 }
-.overview__heading {
-  color: #012169;
-  font-size: 2.25rem;
+.hero__image-slot {
+  height: 0;
+  position: relative;
+  padding-bottom: 21%;
+  width: 14rem;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center center;
   margin-bottom: 1.5rem;
 }
-.overview__text {
-  color: rgba(0, 0, 0, 0.8);
-  line-height: 1.5;
-  font-size: 1.15rem;
+.hero__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 12rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 999rem;
+  margin: 4rem 0 2rem;
+}
+.hero__heading {
   text-align: center;
-  margin-bottom: 1.25rem;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
 }
-@media (min-width: 1024px) {
-  .overview__text {
-    font-size: 1.35rem;
-  }
+.hero__text {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 3.7rem;
+  font-weight: bold;
 }
-.overview__link {
+.hero__link {
   font-weight: bold;
 }
 
@@ -324,11 +344,54 @@ table {
   grid-auto-rows: auto;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  padding: 1.4rem 0 2.85rem;
 }
 @media (min-width: 1024px) {
   .projects {
     -ms-grid-columns: 1fr minmax(0, 80rem) 1fr;
     grid-template-columns: 1fr minmax(0, 80rem) 1fr;
+  }
+}
+.projects__heading {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: white;
+  width: 94%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+  padding: 1.5rem;
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+}
+.projects__heading:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: var(--dark-blue);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.projects__heading:after {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  background: var(--light-blue);
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+@media (min-width: 768px) {
+  .projects__heading {
+    font-size: 2.75rem;
+    text-align: right;
+    padding-right: 5rem;
   }
 }
 @media (min-width: 1024px) {
@@ -338,17 +401,16 @@ table {
     grid-column: 2/3;
   }
 }
-@media (min-width: 768px) {
-  .projects__bold-text {
-    display: unset;
-  }
-}
 .projects__card-display {
   display: -ms-grid;
   display: grid;
   grid-auto-rows: auto;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  padding: 2rem 3%;
+  grid-column-gap: 3%;
+  grid-row-gap: 7rem;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
 }
 @media (min-width: 1024px) {
@@ -362,26 +424,68 @@ table {
   height: 0;
   position: relative;
   padding-bottom: 100%;
+  background: #edf4f7;
 }
-.projects__card:hover .projects__text {
-  height: 50%;
-}
-.projects__image {
+.projects__card:before {
+  content: "";
   position: absolute;
+  bottom: -1.25rem;
+  border-bottom: dashed 3px var(--dark-blue);
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  cursor: default;
+}
+.projects__card:after {
+  content: "";
+  position: absolute;
+  bottom: -4.25rem;
+  width: 100%;
+  height: 2.15rem;
+  background: var(--dark-blue);
+  cursor: default;
+}
+.projects__link-row {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.projects__link {
+  background-color: #3acec2;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 999rem;
+}
+.projects__link:hover {
+  color: #3acec2;
+  background-color: white;
+}
+.projects__subheading {
+  display: block;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--dark-blue);
+}
+@media (min-width: 1200px) {
+  .projects__subheading {
+    margin-top: 1.5rem;
+  }
+}
+.projects__caption {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 0 1.5rem;
+  line-height: 1.5;
 }
 
 .footer {
   margin-top: 3.5rem;
   border-top: 1px solid lightgray;
-  padding: 4%;
+  padding: 4% 7.1%;
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
@@ -390,7 +494,10 @@ table {
   color: #909097;
 }
 .footer__link {
-  color: #4d6dd1;
+  color: var(--light-blue);
+}
+.footer__link:hover {
+  color: var(--dark-blue);
 }
 
 /* 
@@ -416,7 +523,6 @@ TABLE OF CONTENTS:
 }
 
 body {
-  background: whitesmoke;
   font-family: "Lucida Sans", sans-serif;
 }
 

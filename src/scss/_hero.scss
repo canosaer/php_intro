@@ -1,0 +1,46 @@
+@use 'variables';
+@use 'mixins';
+
+.hero{
+	@include mixins.default-grid;
+	padding: 0 2rem;
+	margin: 1rem 0 4rem;
+	background: var(--light-blue);
+	color: white;
+
+	&__image-slot{
+		@include mixins.image-slot;
+		padding-bottom: 21%;
+		width: 14rem;
+		place-self: center center;
+		margin-bottom: 1.5rem;
+	}
+
+	&__image{
+		@include mixins.default-img;
+		width: 12rem;
+		justify-self: center;
+		border-radius: 999rem;
+		margin: 4rem 0 2rem;
+	}
+
+	&__heading{
+		text-align: center;
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+		font-weight: bold;
+	}
+
+	&__text{
+		line-height: 1.5;
+		font-size: 1.5rem;
+		text-align: center;
+		margin-bottom: 3.7rem;
+		font-weight: bold;
+	}
+
+	&__link{
+		// color: var(--emory-blue);
+		font-weight: bold;
+	}
+}

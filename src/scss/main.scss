@@ -21,7 +21,7 @@ TABLE OF CONTENTS:
 
 /* 1. Partials =============================== */
 @use 'header';
-@use 'overview';
+@use 'hero';
 @use 'projects';
 @use 'footer';
 
@@ -32,7 +32,6 @@ TABLE OF CONTENTS:
 }
 
 body{
-	background: whitesmoke;
 	font-family:'Lucida Sans', sans-serif;
 }
 
