@@ -20,27 +20,12 @@ TABLE OF CONTENTS:
 @use 'mixins';
 
 /* 1. Partials =============================== */
-@use 'header';
-@use 'hero';
-@use 'projects';
-@use 'footer';
+
 
 /* 2. General =============================== */
 
 *, *::before, *::after {
 	box-sizing: border-box;
-}
-
-body{
-	font-family:'Lucida Sans', sans-serif;
-}
-
-a{
-	text-decoration: none;
-}
-
-.display-grid{
-	@include mixins.default-grid;
 }
 
 /* 3. Utility ================================ */
