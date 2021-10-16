@@ -155,6 +155,23 @@ TABLE OF CONTENTS:
   box-sizing: border-box;
 }
 
+.form-field.error{
+  font-size: 2rem;
+}
+
+.error-message,
+.form-field.error-message label,
+.form-field.error-message span {
+  color: #a00;
+}
+
+.success-message{
+  color:green;
+}
+
+/* .form-field:not(.error) .error-message{
+  display: none;
+} */
 /* 3. Utility ================================ */
 .hidden {
   display: none;

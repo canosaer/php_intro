@@ -72,5 +72,10 @@ $title = "Intro Title";
         <?php printArrayAsList($array2); ?>
         <hr />
         <?php $array1 = array("k1" => "some value", "k2" => "another value"); ?>
+    </div>
+
+    <script>
+        var myArray2 = <?php echo json_encode($array2); ?>
+    </script>
 
 <?php include('footer.php'); ?>
